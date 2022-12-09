@@ -64,28 +64,32 @@
 			<a href="../data/Raw_Data/2016_2020_Enrollment.csv">Download Raw Data</a>
 			<br> <br>
 			<img src="../images/raw_data/raw_data_2.png" width="1000" height="147"> <br> <br> <br>
-			<p style="font-size:16px;">
+			<p style="font-size:18px;">
 			This raw dataset contains the student demographic and enrollment data of the schools in the United States from 2015-2020. 
 				The raw dataset contains a total of 9096 rows and 39 columns, in which lots of these columns are either useless such as the School DBN, 
-				the enrollment of each year, and the proportions of genders and races in the enrollments (that can be calculated since we have the total 
-				enrollment numbers). So my first step is to remove these unnecessary columns.
+				the school year numbers, and the proportions of genders and races in the enrollments (that can be calculated since we have the total 
+				enrollment numbers). So my first step is to remove these unnecessary columns. <br>
+				
+				<code>df1 = subset(df1, select = -c(1,3,5,6,20,22,24,26,28,30,32:36,38:39))</code>
 			</p>
-			<p style="font-size:16px;">
+			
+			<p style="font-size:18px;">
 			After the initial step, the column numbers reduced to 22. Since there are mostly five rows of data for each school as their 5 years 
 				of enrollment data, I plan to combine and have one row for each school (using aggregate function in R). To do this, I need the entries 
 				to be numeric to groupby and sum up. Checking the type of each column, the column "Poverty" contains mostly numbers but is actually 
-				character type, so I removed the rows that has characters as entries and converted this column to numeric type. 
-				<img src="../images/data_cleaning/dataset1_poverty_change.png" width="652" height="15"> <br>
+				character type, so I removed the rows that has characters as entries and converted this column to numeric type. <br> <br>  
+				<img src="../images/data_cleaning/dataset1_poverty_change.png" width="652" height="15"> <br> <br> 
 				This resulted in the removal of 905 rows in the dataset, which means that about 10% of data was lost. 
 			</p>
-			<p style="font-size:16px;">
+			
+			<p style="font-size:18px;">
 			Then, the dataset will be aggregated by school names, which created a new dataframe with 1794 observations of 22 variables. The school names
 				were renamed using the index of the dataframe to save space. The check on missingvalues at this time shows that there are no missing values.
 				However, the schools in the dataframe do not cover all the grades, so I created labels that indicates the schools to be "elementary", 
 				"middle", or "high" schools, and will use these labels in later analyses. 
 			</p> 
 			
-			<p style="font-size:16px;">
+			<p style="font-size:18px;">
 			<a href="../data/Cleaned_Data/cleaned_2016_2020_enroll.csv">Now the cleaned 2015-2020 enrollment dataset</a> has 1794 rows and 25 columns, 
 				and will be ready for future subsetting, feature generation etc. for the supervised or unsupervised models. 
 				<a href="../code/Data_Cleaning/cleaning_dataset_1.html">Codes</a>
