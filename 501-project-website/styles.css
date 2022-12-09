@@ -1,122 +1,174 @@
+html, body {
+text-align: center;
+}
+p {text-align: left;}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: none;
-    background-color: white;
-    margin-bottom: 50px;
+	margin: 0;
+	padding: 0;
+	background: #697281;
+	font-family:  Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #F1F5F8;
+  background: #26476E url(background.png) repeat-x;
+}
+*
+{
+  margin: 0 auto 0 auto;
+ text-align:left;}
+
+#page
+{
+  margin: 0 auto 0 auto; 
+  display: block; 
+  height:auto;
+  position: relative; 
+  overflow: hidden; 
+  width: 753px;
 }
 
-ul {
-    list-style-type: none;
-    margin: 5px;
-    padding: 5px;
-    overflow: hidden;
-    background-color: #792e2e;
-    max-width:1357px;
+#header
+{
+margin-top:25px;
+padding-top:63px;
+padding-left:30px;
+padding-right:30px;
+background-image:url(header.png);
+background-repeat:no-repeat;
+height:122px;
+width:753px;
+overflow:hidden;
 }
 
-ol{
-    margin: 20px;
-    padding: 10px;
-    max-width:800px;
+#header h1, #header h2
+{
+margin-left:0px;
+width:693px;
+position:relative;
+color:#000000;
+text-align:center;
+font-size:15px;
+font-weight:bold;
+font-family:Arial, Helvetica, sans-serif;
+clear:both;
 }
 
-li {
-    float: left;
-    padding: 3px;
-    max-width: 1000px;
-    margin-left: 1px;
+#header h1
+{
+margin-left:0px;
+width:693px;
+position:relative;
+color:#26476E;
+font-size:30px;
 }
 
-.wrapped-list li{
-    padding-right:100px; 
-    margin-bottom: 10px;
-  }
 
-li a, .dropbtn {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    text-decoration: none;
+
+#bar
+{
+background-image:url(bar.png);
+background-repeat:no-repeat;
+height:53px;
+width:750px;
+padding-bottom:15px;
+text-align:center;
+margin:0 auto 0 auto;
 }
 
-li a:hover, .dropdown:hover .dropbtn {
-    background-color: rgb(153, 106, 106);
+#bar ul {
+	margin: 0px auto 0px auto;
+	padding: 0px;
+	list-style-type: none;
+	height: 74px;
+	text-align:center;
+}
+#bar ul li , #bar ul li a, #bar ul li a:visited{
+	margin: 0px;
+	padding: 0px;
+	height: 30px;
+	overflow: hidden;
+	display: inline;
+	text-align:center;
+	line-height:65px;
+	color:#26476E;
+	padding-left:6px;
+	padding-right:6px;
 }
 
-li.dropdown {
-    display: inline-block;
+#bar ul li a:hover
+{
+color:#000000;
+text-decoration:underline;
+
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;  
-    max-width: 200px;
+
+
+
+
+
+
+
+
+.contentTitle
+{
+width:700px;
+height:44px;
+margin-top:20px;
+margin-left:0px;
+margin-right:25px;
+background-image:url(tab_back.png);
+background-repeat:no-repeat;
+
 }
 
-.dropdown-content a {
-    color: black;
-    padding: 5px 5px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    
+.contentTitle h1
+{
+margin-left:21px;
+padding-top:8px;
+font-size:21px;
+font-weight:bold;
+letter-spacing:-1px;
+color:#FFFFFF;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-    opacity: .9;
+
+.contentText
+{
+width:680px;
+padding-left:30px;
+padding-right:30px;
+font-size:13px;
+color:#FFFFFF;
+line-height:30px;
 }
 
-td {
-    padding: 30px;
-    text-align: left;
+a
+{
+text-decoration:none;
+color:#F1F3F8;
 }
 
-tr{
-    padding: 10px;
-    text-align: top;
-    background-color:#ffffff
+a:hover
+{
+border-bottom:1px dotted #F1F3F8;
 }
 
-table {
-    border-collapse: collapse;
-    width: 1000px;
-    margin-top: 30px;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-bottom: 30px;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
+
+#footer {
+width: 750px;
+height:20px;
+text-align:center;
+font-size:9px;
+color:#223F8D;
+padding-top:20px;
 }
 
-div {
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    margin-bottom: 100px;
-    text-align: left;
-    width: 1000px;
+html, body {
+text-align: center;
 }
-
-img:hover {
-  opacity: 1;
-}
-
-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0px;
-    width: 100%;
-    background-color: #792e2e;
-    color: white;
-    text-align: center;
-  }
-
-a {
-    color: rgb(244, 148, 148); 
+p {
+margin:7px;
+text-align: left;
+text-align:justify;
 }
