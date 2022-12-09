@@ -63,7 +63,7 @@
 			<br>
 			<a href="../data/Raw_Data/2016_2020_Enrollment.csv">Download Raw Data</a>
 			<br> <br>
-			<img src="../images/raw_data_2.PNG" width="1000" height="147"> <br> <br> <br>
+			<img src="../images/raw_data/raw_data_2.PNG" width="1000" height="147"> <br> <br> <br>
 			<p style="font-size:16px;">
 			This raw dataset contains the student demographic and enrollment data of the schools in the United States from 2015-2020. 
 				The raw dataset contains a total of 9096 rows and 39 columns, in which lots of these columns are either useless such as the School DBN, 
@@ -75,7 +75,7 @@
 				of enrollment data, I plan to combine and have one row for each school (using aggregate function in R). To do this, I need the entries 
 				to be numeric to groupby and sum up. Checking the type of each column, the column "Poverty" contains mostly numbers but is actually 
 				character type, so I removed the rows that has characters as entries and converted this column to numeric type. 
-				<img src="../images/dataset1_clean1.png" width="652" height="15"> <br>
+				<img src="../images/data_cleaning/dataset1_poverty_change.png" width="652" height="15"> <br>
 				This resulted in the removal of 905 rows in the dataset, which means that about 10% of data was lost. 
 			</p>
 			<p style="font-size:16px;">
@@ -90,7 +90,7 @@
 				and will be ready for future subsetting, feature generation etc. for the supervised or unsupervised models. 
 				<a href="../code/Data_Cleaning/cleaning_dataset_1.html">Codes</a>
 			</p> <br>
-			<img src="../images/dataset1_cleaned1.PNG" width="1000" height="225">
+			<img src="../images/data_cleaning/dataset1_cleaned.png" width="1000" height="225">
 				
 				
 
