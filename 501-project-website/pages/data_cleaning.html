@@ -65,19 +65,19 @@
 			<br> <br>
 			<img src="../images/raw_data_2.PNG" width="1371" height="202"> <br> <br> <br>
 			<p style="font-size:14px;">
-			This raw dataset contains the student demographic and enrollment data of the schools in the United States from 2015-2020. The raw dataset contains a total
-				of 9096 rows and 39 columns, in which lots of these columns are either useless such as the School DBN, the enrollment of each year, and the proportions
-				of genders and races in the enrollments (that can be calculated since we have the total enrollment numbers). So my first step is to remove these 
-				unnecessary columns.
+			This raw dataset contains the student demographic and enrollment data of the schools in the United States from 2015-2020. 
+				The raw dataset contains a total of 9096 rows and 39 columns, in which lots of these columns are either useless such as the School DBN, 
+				the enrollment of each year, and the proportions of genders and races in the enrollments (that can be calculated since we have the total 
+				enrollment numbers). So my first step is to remove these unnecessary columns.
 			</p>
 			<p style="font-size:14px;">
-			After the initial step, the column numbers reduced to 24. Since there are mostly five rows of data for each school as their 5 years of enrollment data, 
-				I plan to combine and have one row for each school (using aggregate function in R). To do this, I need the entries to be numeric to groupby and 
-				sum up. Checking the type of each column, the column "Poverty" contains mostly numbers but is actually character type, so I removed the rows that has 
-				non numeric characters and converted this column to numeric type. (image clean1)
+			After the initial step, the column numbers reduced to 24. Since there are mostly five rows of data for each school as their 5 years 
+				of enrollment data, I plan to combine and have one row for each school (using aggregate function in R). To do this, I need the entries 
+				to be numeric to groupby and sum up. Checking the type of each column, the column "Poverty" contains mostly numbers but is actually 
+				character type, so I removed the rows that has non numeric characters and converted this column to numeric type. (image clean1)
 			</p>
 			<p style="font-size:14px;">
-			
+			The next step is to check the missing values. Since this 
 			</p> <br> <br>
 		  
 					
