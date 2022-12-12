@@ -111,37 +111,70 @@
 			<h4  id="C1"><center>Test 1</center></h4>
 			
 			<figure class="half" style="display:flex">
-			    <img src="../images/NB/dataset1_CM1.png" width="400" height="119"> <br> <br>
+			    <img src="../images/NB/dataset1_CM1.png" width="150" height="150"> <br> <br>
 			    <img src="../images/NB/NB_dataset1_HM1.png" width="549" height="470">
 			</figure>
 			
 			<p style="font-size:18px;">
 			The confusion matrix and related heatmap of classification result with enrollments for different grades in elementary school as X features. 
-				The accuracy for this model was 0.55. From the matrix the model successfully classified most of y labels in group 2 (girls enrollments between 
+				The accuracy for this model was 0.55. From the matrix the model successfully classified most of y labels 2 (girls enrollments between 
 				 40% and 50% of total enrollments), however when the actual y label is 3 (girls enrollments > 50%), the predictions are very poor.
 			</p>
 			<br> <br>
 			
-			<figure class="half" style="display:flex">
-			    <img src="../images/NB/dataset1_CM2.png" width="400" height="119"> <br> <br>
-			    <img src="../images/NB/NB_dataset1_HM2.png" width="549" height="470">
-			    <figcaption>X: enrollments for different grades in middle school; y: girls enrollment proportion; Accuracy:</figcaption>
-			</figure>
+			<h4  id="C1"><center>Test 2</center></h4>
 			
 			<figure class="half" style="display:flex">
-			    <img src="../images/NB/dataset1_CM3.png" width="119" height="119"> <br> <br>
+			    <img src="../images/NB/dataset1_CM2.png" width="150" height="150"> <br> <br>
+			    <img src="../images/NB/NB_dataset1_HM2.png" width="549" height="470">
+			</figure>
+			
+			<p style="font-size:18px;">
+			The confusion matrix and related heatmap of classification result with enrollments for different grades in middle school as X features. 
+				The accuracy for this model was 0.51. From the matrix the model again successfully classified most of y labels 2,
+				and when the actual y label is 3, the predictions are very poor.
+			</p>
+			<br> <br>
+			
+			<h4  id="C1"><center>Test 3</center></h4>
+			
+			<figure class="half" style="display:flex">
+			    <img src="../images/NB/dataset1_CM3.png" width="150" height="150"> <br> <br>
 			    <img src="../images/NB/NB_dataset1_HM3.png" width="549" height="470">
 			</figure>
+			
 			<p style="font-size:18px;">
 			The confusion matrix and related heatmap of classification result with enrollments for different grades in high school as X features. The 
-				accuracy for this model was 0.54, which was a fairly poor result. 	
+				accuracy for this model was 0.54. From the matrix, the model was able to make the right classification for y label 3, however for both
+				y label 1 and 2 the model classified most of them also to be 3. 
 			</p>
+			<br> <br>
+			
+			<h4  id="C1"><center>Test 4</center></h4>
 			
 			<figure class="half" style="display:flex">
-			    <img src="../images/NB/dataset1_CM4.png" width="400" height="119"> <br> <br>
+			    <img src="../images/NB/dataset1_CM4.png" width="150" height="150"> <br> <br>
 			    <img src="../images/NB/NB_dataset1_HM4.png" width="549" height="470">
-			    <figcaption>X: enrollments for different races; y: girls enrollment proportion; Accuracy:</figcaption>
 			</figure>
+			
+			<p style="font-size:18px;">
+			The confusion matrix and related heatmap of classification result with enrollments for different races as X features. The 
+				accuracy for this model was 0.6. From the matrix, the model was able to make the right classification for y label 2, however for y label 3
+				the predictions are extremely poor.
+			</p>
+			<br> <br>
+			
+			<h3  id="C1">Conclusion</h3>
+			
+			<p style="font-size:18px;">
+			All the Naive Bayes models used on this dataset did not perform well, with the accuracies slightly over 50%. Since the algorithm could only 
+				correctly classify about half of the y labels, it is possible to conclude that the enrollment situation of girls are not really affected 
+				by different grades or races. However, it is also possible that Naive Bayes is not a suitable model for the classification job on this 
+				particular dataset, since overall it has the "Naive" assumption that every pair of features are conditionally independent. Thus, to find 
+				the real answer to the data science questions, deeper models will be used later. 
+			</p>
+			
+			
 			
 		
 
