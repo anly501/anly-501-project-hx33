@@ -100,17 +100,27 @@
 				2. enrollments for different grades in middle school <br>
 				3. enrollments for different grades in high school <br>
 				4. enrollments for different races <br> 
-			</p>
+			</p> 
 			
 			<p style="font-size:18px;">
 			The classification results from Naive Bayes are represented in the way of confusion matrices. For each of the 4 tests,
 			</p>
 			
+			<br>
+			
+			<h4  id="C1"><center>Test 1</center></h4>
+			
 			<figure class="half" style="display:flex">
 			    <img src="../images/NB/dataset1_CM1.png" width="400" height="119"> <br> <br>
 			    <img src="../images/NB/NB_dataset1_HM1.png" width="549" height="470">
-			    <figcaption>X: enrollments for different grades in elementary; y: girls enrollment proportion; Accuracy:</figcaption>
 			</figure>
+			
+			<p style="font-size:18px;">
+			The confusion matrix and related heatmap of classification result with enrollments for different grades in elementary school as X features. 
+				The accuracy for this model was 0.55. From the matrix the model successfully classified most of y labels in group 2 (girls enrollments between 
+				 40% and 50% of total enrollments), however when the actual y label is 3 (girls enrollments > 50%), the predictions are very poor.
+			</p>
+			<br> <br>
 			
 			<figure class="half" style="display:flex">
 			    <img src="../images/NB/dataset1_CM2.png" width="400" height="119"> <br> <br>
@@ -119,13 +129,12 @@
 			</figure>
 			
 			<figure class="half" style="display:flex">
-			    <img src="../images/NB/dataset1_CM3.png" width="400" height="119"> <br> <br>
+			    <img src="../images/NB/dataset1_CM3.png" width="119" height="119"> <br> <br>
 			    <img src="../images/NB/NB_dataset1_HM3.png" width="549" height="470">
 			</figure>
 			<p style="font-size:18px;">
 			The confusion matrix and related heatmap of classification result with enrollments for different grades in high school as X features. The 
-				accuracy for this model was 0.54, which was a fairly poor result. 
-				
+				accuracy for this model was 0.54, which was a fairly poor result. 	
 			</p>
 			
 			<figure class="half" style="display:flex">
