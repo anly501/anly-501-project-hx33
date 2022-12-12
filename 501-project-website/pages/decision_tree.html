@@ -140,8 +140,7 @@
 			<h3  id="C1">Model tuning</h3>
 			<p style="font-size:18px;">
 			Model tuning is the experimental process of finding the optimal values of hyperparameters to maximize model performance. To perform model tuning
-				for DT classifiers, I chose 1. middle school and 2. races for the X features data. The dataset will be separated it into training and 
-				testing sets, and DT will build the classification model after training on the training data, and will make predictions on test data.
+				for DT classifiers, I chose 1. middle school and 2. races for the X features data. 
 				The maximum depth parameter was iterated from 1 to 20 to train and find the model with the best accuracy. 
 			</p>
 			
@@ -149,9 +148,20 @@
 			
 			<center><img src="../images/DT/DT_dataset1_accu1.png" width="623" height="404"></center> <br> <br>
 			
+			<p style="font-size:18px;">
+			The Accuracy vs. max_depth plot shows the accuracy number of predicted label (y=0) of each model with the different max_depth parameter. From
+				the plot the prediction labels on the test features have highest accuracy of 0.76 when the parameter is 5, thus using this number the confusion
+				matrix of the classification results from Decision Tree is shown below:
+			</p> <br> <br>
+			
 			<center><img src="../images/DT/DT_dataset1_HM1.png" width="498" height="432"></center> <br> <br>
 			
+			<p style="font-size:18px;">
+			From the matrix we can see that the classifier predicted perfectly when the true label is 0, but was extremely poor with true label 1. The  
+			plots of the decision tree can be seen below: 
+			</p> <br> <br>
 			
+			<center><img src="../images/DT/DT_dataset1_tree1.png" width="1000" height="800"></center> <br> <br>
 			
 			<h3  id="C1">Conclusion</h3>
 			
