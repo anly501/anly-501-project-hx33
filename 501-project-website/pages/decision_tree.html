@@ -2,7 +2,8 @@
 <html>
 
 	<head>
-		<title>Exploring Data</title>
+		<title>Decision Tree</title>
+		<link rel="stylesheet" href="../styles.css">
 	</head>
 
 	<body>
@@ -10,7 +11,7 @@
 	<!-- HEADER BAR -->
 	<ul>
 	    <!-- link back to homepage -->
-	    <li><a href="./index.html">About me</a></li>
+	    <li><a href="../index.html">About me</a></li>
 
 	    <!-- tab without dropdown  -->
 	    <li><a href="https://github.com/anly501/anly-501-project-hx33/tree/main/codes">Code</a></li>
@@ -19,25 +20,25 @@
 	    <li><a href="https://github.com/anly501/anly-501-project-hx33/tree/main/data">Data</a></li>
 
 	    <!-- tab without dropdown  -->
-	    <li><a href="./pages/portfolio_introduction.html">Introduction</a></li>
+	    <li><a href="./portfolio_introduction.html">Introduction</a></li>
 
 	    <!-- tab without dropdown  -->
-	    <li><a href="./pages/data_gathering.html">Data Gathering</a></li>
+	    <li><a href="./data_gathering.html">Data Gathering</a></li>
 
 	    <!-- tab with dropdown -->
-	    <li><a href="./pages/data_cleaning.html">Data Cleaning</a></li>
+	    <li><a href="./data_cleaning.html">Data Cleaning</a></li>
 
 	    <!-- tab with dropdown -->
-	    <li><a href="./pages/exploring_data.html">Exploring Data</a></li>
+	    <li><a href="./exploring_data.html">Exploring Data</a></li>
 
 	    <!-- tab without dropdown  -->
-	    <li><a href="./pages/naive_bayes.html">Naive Bayes</a></li>
+	    <li><a href="./naive_bayes.html">Naive Bayes</a></li>
 
 	    <!-- tab without dropdown  -->
-	    <li><a href="./pages/decision_tree.html">Decision Tree</a></li>
+	    <li><a href="./decision_tree.html">Decision Tree</a></li>
 
 	    <!-- tab without dropdown  -->
-	    <li><a href="./pages/SVM.html">SVM</a></li>
+	    <li><a href="./SVM.html">SVM</a></li>
 
 	    <!-- <li class="dropdown">
 		<a href="javascript:void(0)" class="dropbtn">local reference</a>
@@ -48,33 +49,84 @@
 	    </li> -->  
 	</ul>
 
-	  <div id="id-of-element-to-link-to">
-	  	<!-- HTML can use six different levels of heading elements. The heading elements
-			are ordered from the highest level <h1> to the lowest level <h6>. -->
+	<div id="id-of-element-to-link-to">
 
-	    <h1  id="C1">Data Gathering:</h1>
-
-		<p>
-		methods: search and download datasets on websites (kaggle etc.) <br>
-			 use twitter and news api to find relevant data <br>
-		 	 use wikipedia to find accurate text data
-		</p>
-
-
-	    <h2>data collected:</h2>
-		 <ol>
-			 <li><a href="https://www.kaggle.com/datasets/gpreda/elementary-school-admission-romania-2014">
-				 romania_elementary_school_registration_2014</li>
-			 <li><a href="https://www.kaggle.com/datasets/devansodariya/student-performance-data">
-				 secondary_student_performance.csv</li>
-			 <li><a href="https://www.kaggle.com/datasets/adarshsng/indian-student-state-wise-dropout-rate-dor">
-				 student_dropoutrate.csv</li>
-		 </ol>
-		  
-
-
-
-	  </div>
+	    <h1  id="C1"><center>Decision Tree<center/></h1>
+			<p style="font-size:18px;">
+			Decision Trees (DTs) are a non-parametric supervised learning method used for classification and regression. Like Naive Bayes, the goal is 
+				to create a tree-like model that predicts the value of a target variable (y) by learning simple decision rules inferred from the data features (X).
+				The DT classidier model is capable of both binary and multiclass classification, and in this project I will used a binary target variable (-1,1).
+			</p> 
+			
+			<p style="font-size:18px;">
+			Decision Tree algorithm has the advantage that its trees can be visualized, which means that the decision steps can be viewed and are 
+				simple to interpret. The models are also easy to validate statistical tests to increase the reliability of the model. However, sometimes 
+				the models can often be overfitting and create over-complex trees. Therefore, setting a maximum depth of the tree are usually necessary.	
+			</p> 
+			
+		<h2  id="C1"><center>Students Enrollment 2015-2020 Dataset<center/></h2>
+			<h3  id="C1">Class distribution</h3>
+			<p style="font-size:18px;">
+			The goal of using Decision Tree on this dataset is to check whether some variables (grades, races or poverty issues) are related to the difference 
+				between the enrollments of girls and boys. To do this the labels that represent the difference should be created as the class variable y.
+				Therefore, I choose create 3 class labels: the schools with girls enrollments that's less than half of total enrollments will be labeled as 1, 
+				with girls enrollments above 50% labeled as 2. 
+			</p>
+			
+			<code>
+				df1 = subset(df1, select = -c(1,3,5,6,20,22,24,26,28,30,32:36,38:39))
+			</code>
+			
+			<img src="../images/NB/dataset1_label.png" width="400" height="119"> <br> <br>
+			<img src="../images/NB/dataset1_labeled.png" width="400" height="119">
+			
+			<h3  id="C1">Baseline model for comparison</h3>
+			<p style="font-size:18px;">
+			As a baseline comparison, a random classifier on the data was performed. This step carried out a uniform random number generation with random 
+				numbers sampled based on the distribution of labels in dataset (y labels). The reported accuracy of the random classifier is 0.34, with 
+				recall values 0.65 and f-score 0.37.
+			</p>
+			
+			<code>
+				df1 = subset(df1, select = -c(1,3,5,6,20,22,24,26,28,30,32:36,38:39))
+			</code>
+			
+			<h3  id="C1">Feature selection</h3>
+			
+			<p style="font-size:18px;">
+			Then, the decision tree model will use this label as y, and the feature vectors X include either <br>
+				1. enrollments for different grades in either elementary, middle or high school, <br>
+				2. enrollments for different races. <br>
+				
+				The dataset will be separated it into training and testing sets. DT will build the classification model after training on the training data, 
+				and will make predictions on test data. Then, appropriate visualizations and result summaries will be drawn based on the comparison of the
+				predicted labels and the real labels. 
+			</p>
+			
+			<code>
+				df1 = subset(df1, select = -c(1,3,5,6,20,22,24,26,28,30,32:36,38:39))
+			</code>
+			
+			
+			<h3  id="C1">Model tuning:</h3>
+			<p style="font-size:18px;">
+			Model tuning is the experimental process of finding the optimal values of hyperparameters to maximize model performance. To perform model tuning
+				for DT classifiers, I chose 1. middle school and 2. races for the X features data. The dataset will be separated it into training and 
+				testing sets, and DT will build the classification model after training on the training data, and will make predictions on test data.
+				The maximum depth parameter was iterated from 1 to 20 to train and find the model with the best accuracy. 
+			</p>
+			
+			<h4  id="C1"><center>X-feature: Middle School Enrollments</center></h4>
+			
+			<center><img src="../images/DT/DT_dataset1_accu1.png" width="623" height="404"></center> <br> <br>
+			
+			<center><img src="../images/DT/DT_dataset1_HM1.png" width="498" height="432"></center> <br> <br>
+			
+			
+			
+		
+		
+	</div>
 
 
 
