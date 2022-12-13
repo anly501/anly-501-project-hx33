@@ -64,7 +64,7 @@
 			<p style="font-size:18px;">
 			Clustering is the task of grouping a set of data points so that these entries in the same group are more similar to each other than to those 
 				in other groups. For this project, clustering is going to solve the questions of: Is the situation of the enrollments difference between
-				boys and  girls related to the poverty situation of the school?
+				boys and girls related to the poverty situation of the school?
 			</p> 
 			
 			<p style="font-size:18px;">
@@ -106,9 +106,21 @@
 			<h4  id="C1">Hyper-parameter tuning for K-Means</h4>
 			
 			<p style="font-size:18px;">
-			For K-means clustering, I will use the elbow method for hyper -parameter tuning to find the optimal number of clusters. After fitting the X-features,
-				the inertia of the model vs. the K numbers in a range of 1 to 10 will be plotted in order to find the 
+			For K-means clustering, I will use the elbow method for hyper-parameter tuning to find the optimal number of clusters. After fitting the X-features,
+				the inertia of the model vs. the K numbers in a range of 1 to 10 will be plotted in order to find the best number of K. The results of the
+				elbow method are shown below on the left: 
 			</p>
+				
+			<figure class="half" style="display:flex">
+			    <img src="../images/Cluster/Cl_Dataset1_Inertia1.png" width="450" height="287"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+			    <img src="../images/Cluster/Cl_Dataset1_Cluster1.png" width="450" height="345">
+			</figure>
+				
+			<p style="font-size:18px;">
+			From the plot, the "elbow" of the K-Means model is at 4, therefore K=4 is the best number of clusters. Then, using this parameter the result of 
+				the cluster model is shown on the right: the data points enrollments of girls and poverty students are separated into 4 groups.  
+			</p>
+			
 			
 		
 			
