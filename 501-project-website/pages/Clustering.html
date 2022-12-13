@@ -72,6 +72,13 @@
 				enrollments of the schools. Since clustering is an unsupervised algorithm, there is no y-label. 
 			</p> 
 				
+			<figure class="half" style="display:flex">
+			    <img src="../images/Cluster/Cl_Dataset1_X1.png" width="645" height="161"> 
+			    <img src="../images/Cluster/Cl_Dataset1_X2.png" width="164" height="161">
+			</figure>
+			
+			<br> <br>
+				
 			<h3  id="C1">Theory</h3>
 				
 			<h4  id="C1"><center>K-Means</center></h4>
@@ -79,7 +86,10 @@
 			<p style="font-size:18px;">
 			Probably the most commonly used clustering method, K-means works by first selecting k points as the center points of the clusters, and then
 				calculate the distance from the k center points to the data points so for each data point the nearest center point can be found. 
-				Then the algorithm will start to update the center points, by calculate an intermediate point for each of the clusters, make it become the new
+			</p>
+				
+			<p style="font-size:18px;">
+			Then the algorithm will start to update the center points, by calculate an intermediate point for each of the clusters, make it become the new
 				center point of the clusters and keep updating until the distance calculated above is small enough. At this time the clusters are determined.
 			</p>
 				
@@ -93,6 +103,14 @@
 				
 			<h3  id="C1">Methods</h3>
 				
+			<h4  id="C1">Hyper-parameter tuning for K-Means</h4>
+			
+			<p style="font-size:18px;">
+			For K-means clustering, I will use the elbow method for hyper -parameter tuning to find the optimal number of clusters. After fitting the X-features,
+				the inertia of the model vs. the K numbers in a range of 1 to 10 will be plotted in order to find the 
+			</p>
+			
+		
 			
 			
 			
