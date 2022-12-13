@@ -2,7 +2,7 @@
 <html>
 
 	<head>
-		<title>Clusteriing</title>
+		<title>Clustering</title>
 		<link rel="stylesheet" href="../styles.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
@@ -57,20 +57,45 @@
         
     <div id="id-of-element-to-link-to">
 
-	    <h1  id="C1"><center>Decision Tree<center/></h1>
+	    <h1  id="C1"><center>Clustering<center/></h1>
+			
+			<h2  id="C1"><center>Students Enrollment 2015-2020 Dataset<center/></h2>
+				
 			<p style="font-size:18px;">
-			Decision Trees (DTs) are a non-parametric supervised learning method used for classification and regression. Like Naive Bayes, the goal is 
-				to create a tree-like model that predicts the value of a target variable (y) by learning simple decision rules inferred from the data features (X).
-				The DT classidier model is capable of both binary and multiclass classification, and in this project I will used a binary target variable (-1,1).
+			Clustering is the task of grouping a set of data points so that these entries in the same group are more similar to each other than to those 
+				in other groups. For this project, clustering is going to solve the questions of: Is the situation of the enrollments difference between
+				boys and  girls related to the poverty situation of the school?
 			</p> 
 			
 			<p style="font-size:18px;">
-			Decision Tree algorithm has the advantage that its trees can be visualized, which means that the decision steps can be viewed and are 
-				simple to interpret. The models are also easy to validate statistical tests to increase the reliability of the model. However, sometimes 
-				the models can often be overfitting and create over-complex trees. Therefore, setting a maximum depth of the tree are usually necessary.	
+			To answer this question, the feature data X is going to be: the enrollments numbers of boys and girls of the school, and the number of poverty
+				enrollments of the schools. Since clustering is an unsupervised algorithm, there is no y-label. 
 			</p> 
+				
+			<h3  id="C1">Theory</h3>
+				
+			<h4  id="C1"><center>K-Means</center></h4>
+				
+			<p style="font-size:18px;">
+			Probably the most commonly used clustering method, K-means works by first selecting k points as the center points of the clusters, and then
+				calculate the distance from the k center points to the data points so for each data point the nearest center point can be found. 
+				Then the algorithm will start to update the center points, by calculate an intermediate point for each of the clusters, make it become the new
+				center point of the clusters and keep updating until the distance calculated above is small enough. At this time the clusters are determined.
+			</p>
+				
+			<h4  id="C1"><center>Elbow Method</center></h4>
+				
+			<p style="font-size:18px;">
+			For K-means clustering the elbow method is an useful way to find the optimal number of clusters base on plots. The inertia 
+				is a measure of how the clustering is performing on the features, and since the ideal model is supposed to have both low number of
+				clusters and low inertia, the "elbow point" by looking at the graph provides the ultimate K. 
+			</p>
+				
+			<h3  id="C1">Methods</h3>
+				
 			
-		<h2  id="C1"><center>Students Enrollment 2015-2020 Dataset<center/></h2>
+			
+			
 			
 		
 	</div>
