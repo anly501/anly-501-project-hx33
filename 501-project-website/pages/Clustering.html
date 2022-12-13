@@ -106,7 +106,7 @@
 			<h4  id="C1">Hyper-parameter tuning for K-Means</h4>
 			
 			<p style="font-size:18px;">
-			For K-means clustering, I will use the elbow method for hyper-parameter tuning to find the optimal number of clusters. After fitting the X-features,
+			For K-means clustering, I will first use the elbow method for hyper-parameter tuning to find the optimal number of clusters. After fitting the X-features,
 				the inertia of the model vs. the K numbers in a range of 1 to 10 will be plotted in order to find the best number of K. The results of the
 				elbow method are shown below on the left: 
 			</p>
@@ -119,6 +119,28 @@
 			<p style="font-size:18px;">
 			From the plot, the "elbow" of the K-Means model is at 4, therefore K=4 is the best number of clusters. Then, using this parameter the result of 
 				the cluster model is shown on the right: the data points enrollments of girls and poverty students are separated into 4 groups.  
+			</p>
+			
+			<br> <br>
+				
+			<h4  id="C1">Hyper-parameter tuning for Hierarchical Clustering</h4>
+				
+			<p style="font-size:18px;">
+			For hierarchical clustering, I will first use the Silhouette method for hyper-parameter tuning to find the optimal number of clusters. 
+				After fitting the X-features, the Silhouette scores of the model vs. the K numbers in a range of 1 to 10 will be plotted in order to 
+				find the best number of K. The plot of the Silhouette method is shown below on the left. Secondly, a dendrogram plot for the linkage 
+				for the hierarchical clustering will be used to plot the clusters, and to suggest the optimal number of clusters. The dendrogram is shown
+				on the right:
+			</p>
+				
+			<figure class="half" style="display:flex">
+			    <img src="../images/Cluster/Cl_Dataset1_Sil1.png" width="450" height="360"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+			    <img src="../images/Cluster/Cl_Dataset1_Den1.png" width="450" height="447">
+			</figure>
+				
+			<p style="font-size:18px;">
+			The results from the Silhouette method and the dendrogram both suggests that 2 would be the optimal number of clusters, with 4 being the second
+				best. Thus, the results here are not too different comparing to the elbow method of K-Means method. 
 			</p>
 			
 			
