@@ -1,0 +1,18 @@
+---
+title: "Explore Dataset 1"
+output: html_document
+---
+
+```{r}
+df = read.csv("cleaned_2016_2020_enroll.csv")
+
+hist(df$X..Female, breaks=30, xlab = "Enrollments", main = "Enrollment Situation of Girls")
+abline(v = mean(df$X..Female), col="red")
+```
+```{r}
+hist(df$X..Male, breaks=30, xlab = "Enrollments", main = "Enrollment Situation of Boys")
+abline(v = mean(df$X..Male), col="blue")
+```
+```{r}
+t.test(df$X..Female, df$X..Male, alternative = "less")
+```
