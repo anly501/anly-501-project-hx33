@@ -1,0 +1,128 @@
+---
+title: "Naive Bayes on Enrollment Dataset"
+output: html_document
+---
+
+```{r}
+df = read.csv("cleaned_2016_2020_enroll.csv")
+
+ratio = numeric(nrow(df))
+for(i in 1:nrow(df)){
+  if(df$X..Female[i]/df$Total.Enrollment[i] <= 0.4){
+    ratio[i] = 1
+  }  
+  if(df$X..Female[i]/df$Total.Enrollment[i] > 0.4 & df$X..Female[i]/df$Total.Enrollment[i] <= 0.5){
+    ratio[i] = 2
+    }  
+  if(df$X..Female[i]/df$Total.Enrollment[i] > 0.5){
+    ratio[i] = 3
+  }  
+}
+df$X = ratio
+colnames(df)[1] = 'y'
+colnames(df)[24] = "X..Multirace"
+```
+
+```{r}
+df1 = df[,c(2,1,3:26)]
+```
+
+```{r}
+library(caret)
+library(caTools)
+```
+
+```{r}
+# high school
+high = df1[df1$high==1,]
+
+set.seed(120)
+split = sample.split(high, SplitRatio=0.8)
+htrain = subset(high, split=="TRUE")
+htest = subset(high, split=="FALSE")
+htrain_s = scale(htrain[, 17:20]/htrain$Total.Enrollment)
+htrain_s = as.data.frame(htrain_s)
+htrain_s$y = htrain$y
+```
+
+```{r}
+htest_s = scale(htest[, 17:20]/htest$Total.Enrollment)
+htest_s = as.data.frame(htest_s)
+htest_s$y = htest$y
+```
+
+```{r}
+library(e1071)
+clf = naiveBayes(y ~ ., data=htrain_s)
+
+hy_pred = predict(clf, newdata=htest_s)
+hcm = table(htest_s$y, hy_pred)
+confusionMatrix(hcm)
+```
+
+```{r}
+# heatmap(hcm, Rowv=NA, Colv=NA, RowSideColors, main = "Heatmap for Confusion Matrix 3", xlab = "Predicted Label", ylab = "Actual Label")
+```
+
+```{r}
+# middle
+mid = df1[df1$mid==1,]
+
+set.seed(1130)
+split = sample.split(mid, SplitRatio=0.8)
+mtrain = subset(mid, split=="TRUE")
+mtest = subset(mid, split=="FALSE")
+mtrain_s = scale(mtrain[, 14:16]/mtrain$Total.Enrollment)
+mtrain_s = as.data.frame(mtrain_s)
+mtrain_s$y = mtrain$y
+mtest_s = scale(mtest[, 14:16]/mtest$Total.Enrollment)
+mtest_s = as.data.frame(mtest_s)
+mtest_s$y = mtest$y
+clf = naiveBayes(y ~ ., data=mtrain_s)
+
+my_pred = predict(clf, newdata=mtest_s)
+mcm = table(mtest_s$y, my_pred)
+confusionMatrix(mcm)
+```
+
+```{r}
+# elementary
+elem = df1[df1$elem==1,]
+
+set.seed(1111)
+split = sample.split(elem, SplitRatio=0.8)
+etrain = subset(elem, split=="TRUE")
+etest = subset(elem, split=="FALSE")
+etrain_s = scale(etrain[, 14:16]/etrain$Total.Enrollment)
+etrain_s = as.data.frame(etrain_s)
+etrain_s$y = etrain$y
+etest_s = scale(etest[, 14:16]/etest$Total.Enrollment)
+etest_s = as.data.frame(etest_s)
+etest_s$y = etest$y
+clf = naiveBayes(y ~ ., data=etrain_s)
+
+my_pred = predict(clf, newdata=etest_s)
+ecm = table(etest_s$y, my_pred)
+confusionMatrix(ecm)
+```
+
+
+```{r}
+# race
+set.seed(3333)
+split = sample.split(df1, SplitRatio=0.8)
+train = subset(df1, split=="TRUE")
+test = subset(df1, split=="FALSE")
+train_s = scale(train[, 21:25]/train$Total.Enrollment)
+train_s = as.data.frame(train_s)
+train_s$y = train$y
+test_s = scale(test[, 21:25]/test$Total.Enrollment)
+test_s = as.data.frame(test_s)
+test_s$y = test$y
+
+clf = naiveBayes(y ~ ., data=train_s)
+
+y_pred = predict(clf, newdata=test_s)
+cm = table(test_s$y, y_pred)
+confusionMatrix(cm)
+```
