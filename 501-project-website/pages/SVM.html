@@ -75,9 +75,10 @@
 				
 				<h3  id="C1">Class distribution</h3>
 				<p style="font-size:18px;">
-				The goal of using SVM on the text dataset is to find out whether the SVM model is able to classify and predict new text data based on training.
+				The goal of using SVM on the text dataset is to find out whether the SVM model is able to classify and predict new text data group.
 					In the data cleaning part, two text dataset using different keywords "school" and "education" were cleaned and put together as one labeled
-					dataset. The distribution of these two class labels: school: 678, education: 610. 
+					dataset. The distribution of these two class labels: school: 678, education: 610. Then, the model will train and predict new texts
+					to be either about schools or education of girls. 
 				</p>
 				
 				<h3  id="C1">Baseline model for comparison</h3>
@@ -107,7 +108,9 @@
 				The regularization parameter was iterated with 20 different values to train and find the model with the best accuracy. 
 				</p>
 				
-				<certer><img src="../images/SVM/SVM_linear_accu1.png" width="623" height="403"></center>
+				<center><img src="../images/SVM/SVM_linear_accu1.png" width="623" height="403"></center>
+				
+				<br> <br> 
 				
 				<figure class="half" style="display:flex">
 			    <img src="../images/SVM/SVM_linear_HM2.png" width="400" height="341"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
@@ -121,9 +124,20 @@
 				</p>
 				
 				<p style="font-size:18px;">
-				From the matrix we can see that SVM model performed really well with the onehot matrix and the labels, and with accuracy 0.895 we can say that 
+				From the matrix we can see that SVM model performed really well with the onehot matrix and successful predicted the text to be either about 
+					school or about general education for girls, and with accuracy 0.895 we can say that 
 					this SVM model does not overfit too much.
 				</p>
+				
+				<h3  id="C1">Conclusion</h3>
+			
+				<p style="font-size:18px;">
+				The SVM model with the X-features of onehot data obtained by the cleaned text dataset reports an accuracy of 0.9, which is a really nice result. 
+					The will also indicate that tweets about girls in schools or in education are really distinct with each other, therefore they are
+					two different topics to talk about. 
+				</p> <br> <br>
+
+				<h4  id="C1"><a href="../code/SVM/SVM.html">Python (jupyter notebook) Code for the Decision Tree Process</a></h4>
 
 
 	</div>
