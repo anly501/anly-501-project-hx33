@@ -98,7 +98,7 @@
 				
 				<p style="font-size:18px;">
 				Model tuning is the experimental process of finding the optimal values of hyperparameters to maximize model performance. To perform model tuning
-					for SVM classifiers, first for linear model will be tested for hyperparameter, and then several different kernels will be tested. 
+					for SVM classifiers, linear kernel model will be tested for hyperparameter. 
 				</p>
 				
 				<h4  id="C1"><center>X-feature: Linear SVM model tuning</center></h4>
@@ -107,13 +107,22 @@
 				The regularization parameter was iterated with 20 different values to train and find the model with the best accuracy. 
 				</p>
 				
+				<certer><img src="../images/SVM/SVM_linear_accu1.png" width="623" height="403"></center>
+				
 				<figure class="half" style="display:flex">
-			    <img src="../images/SVM/SVM_linear_accu1.png" width="500" height="319"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+			    <img src="../images/SVM/SVM_linear_HM2.png" width="400" height="341"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 			    <img src="../images/SVM/SVM_linear_HM1.png" width="400" height="341">
 				</figure>
 				
 				<p style="font-size:18px;">
-				The regularization parameter was iterated with 20 different values to train and find the model with the best accuracy. 
+				The Accuracy vs. regularization parameter plot shows the accuracy number of predicted label (y=0) of each model with the different parameter. From
+				the plot the prediction labels on the test features have highest accuracy of 0.9 when the parameter is 0.75, thus using this number the confusion
+				matrix of the classification results from SVM is shown on the right.
+				</p>
+				
+				<p style="font-size:18px;">
+				From the matrix we can see that SVM model performed really well with the onehot matrix and the labels, and with accuracy 0.895 we can say that 
+					this SVM model does not overfit too much.
 				</p>
 
 
