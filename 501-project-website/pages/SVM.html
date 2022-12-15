@@ -70,8 +70,51 @@
 			SVM is suitable for classifying texts and hypertexts, images, as well as identifying handwritten notes, etc. Sometimes it is even used for very
 				complicated job, such as classifying different proteins in medical science. For this project, it will be used to classify the twitter texts.
 			</p>
+			
+			<h2  id="C1"><center>Text Dataset<center/></h2>
+				
+				<h3  id="C1">Class distribution</h3>
+				<p style="font-size:18px;">
+				The goal of using SVM on the text dataset is to find out whether the SVM model is able to classify and predict new text data based on training.
+					In the data cleaning part, two text dataset using different keywords "school" and "education" were cleaned and put together as one labeled
+					dataset. The distribution of these two class labels: school: 678, education: 610. 
+				</p>
+				
+				<h3  id="C1">Baseline model for comparison</h3>
+				<p style="font-size:18px;">
+				As a baseline comparison, a random classifier on the data was performed. This step carried out a uniform random number generation with random 
+					numbers sampled based on the distribution of labels in dataset (y labels). The reported accuracy of the random classifier is 0.5, with 
+					recall values 0.53 and f-score 0.47.
+				</p>
 
-		  
+		  		<h3  id="C1">Feature selection</h3>
+			
+				<p style="font-size:18px;">
+				In order to perform support vector machine models on the dataset, the text data with 1288 entries will be converted into an onehoy matrix. After 
+					transformation the resulted X matrix is a sparse matrix consists of 1288 rows and 643 columns. 
+				</p>
+				
+				<h3  id="C1">Model tuning</h3>
+				
+				<p style="font-size:18px;">
+				Model tuning is the experimental process of finding the optimal values of hyperparameters to maximize model performance. To perform model tuning
+					for SVM classifiers, first for linear model will be tested for hyperparameter, and then several different kernels will be tested. 
+				</p>
+				
+				<h4  id="C1"><center>X-feature: Linear SVM model tuning</center></h4>
+				
+				<p style="font-size:18px;">
+				The regularization parameter was iterated with 20 different values to train and find the model with the best accuracy. 
+				</p>
+				
+				<figure class="half" style="display:flex">
+			    <img src="../images/SVM/SVM_linear_accu1.png" width="500" height="319"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+			    <img src="../images/SVM/SVM_linear_HM1.png" width="400" height="341">
+				</figure>
+				
+				<p style="font-size:18px;">
+				The regularization parameter was iterated with 20 different values to train and find the model with the best accuracy. 
+				</p>
 
 
 	</div>
